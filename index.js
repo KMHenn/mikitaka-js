@@ -7,6 +7,7 @@ const client = new Client({intents: intents});
 const dice = require("./commands/dice");
 const actions = require("./commands/actions");
 const help = require("./commands/help");
+
 const helpMsg = help.getMessage();
 const errorMsg = " Invalid command (Type ~help for list of commands)";
 
@@ -14,7 +15,7 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', message => {
+client.on('messageCreate', message => {
 	if (message.author == client.user){
 		return;
 	}

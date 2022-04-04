@@ -128,4 +128,4 @@ function roll(numDice, numSides){
 }
 
 
-module.exports = { parseRoll };
+module.exports = { parseRoll, getSides, doMath, roll };
