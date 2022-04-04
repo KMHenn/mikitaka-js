@@ -1,6 +1,8 @@
 require('dotenv').config(); //initialize dotenv
-const Discord = require('discord.js'); //import discord.js
-const client = new Discord.Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] }); //create new client
+const { Client, Intents, Discord } = require('discord.js'); //import discord.js
+const intents = new Intents();
+intents.add(Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES);
+const client = new Client({intents: intents});
 
 const dice = require("./commands/dice");
 const actions = require("./commands/actions");
