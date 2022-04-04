@@ -122,7 +122,10 @@ function roll(numDice, numSides){
 
     for (x = 0; x < numDice; x++){
         let r = Math.floor(Math.random() * (numSides) + 1);
+        console.log("X: " + x);
+        console.log("X < numDice: " + (x < numDice));
         console.log("Roll: " + r);
+
         if (x === 0){
             rollStr = str(r);
         }
@@ -130,7 +133,7 @@ function roll(numDice, numSides){
             rollStr = rollStr + "+" + str(r);
         }
 
-        total += r;
+        total += int(r);
     }
 
     console.log("Total: " + total);
