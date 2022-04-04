@@ -9,7 +9,7 @@ const ops = ["+", "-", "*", "/"];
  * @returns 
  */
 function parseRoll(dice){
-    let diceStr = dice.replace(" ", "");
+    let diceStr = dice.replace(/\s/g, "");
     console.log(diceStr);
     let diceArr = diceStr.split("d");
     console.log(diceArr[0]);
