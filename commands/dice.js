@@ -127,7 +127,7 @@ function roll(numDice, numSides){
         console.log("Roll: " + r);
 
         if (x === 0){
-            rollStr = str(r);
+            rollStr = r.toString();
         }
         else{
             rollStr = rollStr + "+" + str(r);
