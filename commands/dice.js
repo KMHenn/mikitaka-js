@@ -68,7 +68,7 @@ function getSides(input){
     }
 
     ind = ind + 1;
-    let result = [int(intStr), ind];
+    let result = [parseInt(intStr), ind];
     return result;
 }
 
