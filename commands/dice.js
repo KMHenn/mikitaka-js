@@ -130,7 +130,7 @@ function roll(numDice, numSides){
             rollStr = r.toString();
         }
         else{
-            rollStr = rollStr + "+" + str(r);
+            rollStr = rollStr + "+" + r.toString();
         }
 
         total += r;
