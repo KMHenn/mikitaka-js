@@ -29,6 +29,7 @@ client.on('messageCreate', message => {
 	}
 	else if (message.content.startsWith("~")){
 		if (message.content.includes("~help")){
+			console.log(help.getMessage);
 			response = help.getMessage();
 		}
 		

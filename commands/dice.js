@@ -14,7 +14,7 @@ function parseRoll(dice){
     let numDice = parseInt(diceArr[0]);
     let sideParse = getSides(diceArr[1]);
     let numSides = sideParse[0];
-    let strInd = int(sideParse[1]);
+    let strInd = parseInt(sideParse[1]);
 
     let totalArr = roll(numDice, numSides);
     let total = totalArr[0];
