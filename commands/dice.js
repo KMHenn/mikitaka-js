@@ -133,7 +133,7 @@ function roll(numDice, numSides){
             rollStr = rollStr + "+" + str(r);
         }
 
-        total += int(r);
+        total += r;
     }
 
     console.log("Total: " + total);
