@@ -18,7 +18,7 @@ function parseRoll(dice){
 
     let totalArr = roll(numDice, numSides);
     let total = totalArr[0];
-    let dispStr = "/r " + input + " = ("  + totalArr[1] + ")";
+    let dispStr = "dice" + " = ("  + totalArr[1] + ")";
 
     if (strInd !== diceArr.length){
         curNum = "";
@@ -43,7 +43,9 @@ function parseRoll(dice){
         dispStr = dispStr + " = " + "**" + total + "**";
     }
 
-    return dispStr;
+    return new Promise((resolve, reject) => {
+        resolve(dispStr);
+    });
 }
 
 

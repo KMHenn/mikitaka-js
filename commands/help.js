@@ -45,7 +45,9 @@ function getMessage(){
         }
     }
 
-    return msg;
+    return new Promise((resolve, reject) => {
+        resolve(msg);
+    });
 }
 
 module.exports = { getMessage };
