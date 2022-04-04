@@ -8,7 +8,7 @@ const dice = require("./commands/dice");
 const actions = require("./commands/actions");
 const help = require("./commands/help");
 
-const helpMsg = help.getMessage();
+let helpMsg = help.getMessage();
 const errorMsg = " Invalid command (Type ~help for list of commands)";
 
 client.on('ready', () => {
@@ -24,24 +24,24 @@ client.on('messageCreate', message => {
 	let response = "";
 	if (message.content.startsWith("/r")) {
 		let result = dice.parseRoll(message.content);	
-		response = userTag + ": " + result;
+		response = "@" + userTag + ": " + result;
 		message.reply(response);
 	}
 	else if (message.content.startsWith("~")){
 		if (message.content.includes("~help")){
-			response = userTag + helpMsg;
+			response = helpMsg;
 		}
 		
 		let result = actions.getAction(message.content);
 		if (result === false){
-			response = userTag + errorMsg;
+			response = errorMsg;
 		}
 		else{
-			response = userTag + result;
+			response = result;
 		}
 	}
 	else{
-		response = userTag + errorMsg;		
+		response = errorMsg;		
 	}
 
 	message.reply(response);
