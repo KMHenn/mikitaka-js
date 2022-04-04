@@ -9,7 +9,8 @@ const actions = require("./commands/actions");
 const help = require("./commands/help");
 
 let helpMsg = help.getMessage();
-helpMsg.then(function (helpTxt){
+helpMsg.then((helpTxt) => {
+	console.log(helpTxt);
 	helpMsg = helpTxt;
 });
 const errorMsg = " Invalid command (Type ~help for list of commands)";
@@ -28,15 +29,15 @@ client.on('messageCreate', message => {
 	try{
 		if (message.content.startsWith("/r")) {
 			let result = dice.parseRoll(message.content);
-			result.then(function(rollResult){
+			result.then((rollResult) => {
+				console.log(rollResult);
 				response = rollResult;
-			})	
+			});
 			// response = result;
 		}
 		else if (message.content.startsWith("~")){
 			if (message.content.includes("~help")){
-				console.log(help.getMessage);
-				response = help.getMessage();
+				response = helpMsg;
 			}
 			
 			let result = actions.getAction(message.content);
