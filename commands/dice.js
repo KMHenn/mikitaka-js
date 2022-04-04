@@ -10,7 +10,10 @@ const ops = ["+", "-", "*", "/"];
  */
 function parseRoll(dice){
     let diceStr = dice.replace(" ", "");
+    console.log(diceStr);
     let diceArr = diceStr.split("d");
+    console.log(diceArr[0]);
+    console.log(diceArr[1]);
     let numDice = parseInt(diceArr[0]);
     let sideParse = getSides(diceArr[1]);
     let numSides = sideParse[0];
