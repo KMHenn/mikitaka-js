@@ -122,6 +122,7 @@ function roll(numDice, numSides){
 
     for (x = 0; x < numDice; x++){
         let r = Math.floor(Math.random() * (numSides) + 1);
+        console.log("Roll: " + r);
         if (x === 0){
             rollStr = str(r);
         }
