@@ -1,6 +1,6 @@
 require('dotenv').config(); //initialize dotenv
 const Discord = require('discord.js'); //import discord.js
-const client = new Discord.Client(); //create new client
+const client = new Discord.Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] }); //create new client
 
 const dice = require("./commands/dice");
 const actions = require("./commands/actions");
@@ -28,6 +28,7 @@ client.on('message', message => {
 		if (message.content.includes("~help")){
 			response = userTag + helpMsg;
 		}
+		
 		let result = actions.getAction(message.content);
 		if (result === false){
 			response = userTag + errorMsg;
