@@ -19,7 +19,7 @@ function parseRoll(dice){
 
     let totalArr = roll(numDice, numSides);
     let total = totalArr[0];
-    let dispStr = "dice" + " = ("  + totalArr[1] + ")";
+    let dispStr = diceStr + " = ("  + totalArr[1] + ")";
 
     if (strInd !== diceArr.length){
         curNum = "";
@@ -29,6 +29,7 @@ function parseRoll(dice){
             if (ops.some(op => diceArr[1][x].includes(op))){
                 total = doMath(total, parseInt(curNum), curOp);
                 dispStr = dispStr + " " + curOp + " " + curNum;
+                console.log(dispStr);
                 curNum = "";
                 curOp = diceArr[x];
             }
@@ -39,9 +40,11 @@ function parseRoll(dice){
 
         total = doMath(total, parseInt(curNum), curOp);
         dispStr = dispStr + " " + curOp + " " + curNum + " = " + "**" + (total) + "**";
+        console.log(dispStr);
     }
     else{
         dispStr = dispStr + " = " + "**" + total + "**";
+        console.log(dispStr);
     }
 
     return new Promise((resolve, reject) => {
