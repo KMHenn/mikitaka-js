@@ -48,8 +48,6 @@ client.on('messageCreate', message => {
 		else{
 			message.reply(errorMsg);
 		}
-
-		// message.reply(response);
 	}
 	catch(error){
 		message.reply(errorMsg);

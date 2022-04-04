@@ -71,6 +71,7 @@ function getSides(input){
 
     ind = ind + 1;
     let result = [parseInt(intStr), ind];
+    console.log("Sides: " + result);
     return result;
 }
 
@@ -99,6 +100,7 @@ function doMath(total, newVal, op){
         result = total / newVal;
     }
 
+    console.log("Math: " + result);
     return result;
 }
 
@@ -126,6 +128,8 @@ function roll(numDice, numSides){
         total += r;
     }
 
+    console.log("Total: " + total);
+    console.log("Roll string: " + rollStr);
     return [total, rollStr];
 }
 
