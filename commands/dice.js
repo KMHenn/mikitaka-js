@@ -71,7 +71,7 @@ function getSides(input){
 
     ind = ind + 1;
     let result = [parseInt(intStr), ind];
-    console.log("Sides: " + result);
+    console.log("Sides: " + intStr);
     return result;
 }
 
@@ -116,8 +116,11 @@ function roll(numDice, numSides){
     let total = 0;
     let rollStr = "";
 
+    console.log("Num dice: " + numDice);
+    console.log("Num sides: " + numSides);
+
     for (x = 0; x < numDice; x++){
-        let r = randomInt(1, numSides);
+        let r = Math.floor(Math.random() * (numSides) + 1);
         if (x === 0){
             rollStr = str(r);
         }
