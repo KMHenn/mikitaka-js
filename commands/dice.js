@@ -24,8 +24,7 @@ function parseRoll(dice){
     if (strInd !== diceArr[1].length){
         curNum = "";
         curOp = diceArr[1][strInd];
-        console.log("Current op: " + curOp);
-
+        console.log("Max ind: " + diceArr[1].length);
         for(let x = (strInd); x < diceArr[1].length; x++){
             console.log("Current character: " + diceArr[1][x]);
             if (ops.some(op => diceArr[1][x].includes(op))){
@@ -43,7 +42,7 @@ function parseRoll(dice){
 
         total = doMath(total, parseInt(curNum), curOp);
         dispStr = dispStr + " " + curOp + " " + curNum + " = " + "**" + (total) + "**";
-        console.log(dispStr);
+        console.log("Final string: " + dispStr);
     }
     else{
         dispStr = dispStr + " = " + "**" + total + "**";
