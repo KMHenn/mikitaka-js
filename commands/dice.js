@@ -21,7 +21,7 @@ function parseRoll(dice){
     let total = totalArr[0];
     let dispStr = diceStr + " = ("  + totalArr[1] + ")";
 
-    if (strInd !== diceArr.length){
+    if (strInd !== diceArr[1].length){
         curNum = "";
         curOp = diceArr[1][strInd];
         console.log("Current op: " + curOp);
