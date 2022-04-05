@@ -30,7 +30,7 @@ function parseRoll(dice){
             if (ops.some(op => diceArr[1][x].includes(op))){
                 total = doMath(total, parseInt(curNum), curOp);
                 dispStr = dispStr + " " + curOp + " " + curNum;
-                console.log(dispStr);
+                console.log("At x=" + x + ": " + dispStr);
                 curNum = "";
                 curOp = diceArr[x];
             }
