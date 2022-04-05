@@ -27,9 +27,11 @@ function parseRoll(dice){
         console.log("Current op: " + curOp);
 
         for(let x = (strInd); x < diceArr[1].length; x++){
+            console.log("Current character: " + diceArr[1][x]);
             if (ops.some(op => diceArr[1][x].includes(op))){
                 total = doMath(total, parseInt(curNum), curOp);
                 dispStr = dispStr + " " + curOp + " " + curNum;
+
                 console.log("At x=" + x + ": " + dispStr);
                 curNum = "";
                 curOp = diceArr[x];
