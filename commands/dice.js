@@ -24,8 +24,9 @@ function parseRoll(dice){
     if (strInd !== diceArr.length){
         curNum = "";
         curOp = diceArr[1];
+        console.log("Current op: " + curOp);
 
-        for(let x = (strInd + 1); x < diceArr[1].length; x++){
+        for(let x = (strInd); x < diceArr[1].length; x++){
             if (ops.some(op => diceArr[1][x].includes(op))){
                 total = doMath(total, parseInt(curNum), curOp);
                 dispStr = dispStr + " " + curOp + " " + curNum;
@@ -75,7 +76,6 @@ function getSides(input){
 
     ind = ind + 1;
     let result = [parseInt(intStr), ind];
-    console.log("Sides: " + intStr);
     return result;
 }
 
@@ -104,7 +104,6 @@ function doMath(total, newVal, op){
         result = total / newVal;
     }
 
-    console.log("Math: " + result);
     return result;
 }
 
@@ -119,9 +118,6 @@ function doMath(total, newVal, op){
 function roll(numDice, numSides){
     let total = 0;
     let rollStr = "";
-
-    console.log("Num dice: " + numDice);
-    console.log("Num sides: " + numSides);
 
     for (x = 0; x < numDice; x++){
         let r = Math.floor(Math.random() * (numSides) + 1);
@@ -138,9 +134,7 @@ function roll(numDice, numSides){
 
         total += r;
     }
-
-    console.log("Total: " + total);
-    console.log("Roll string: " + rollStr);
+    
     return [total, rollStr];
 }
 
