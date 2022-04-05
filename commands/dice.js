@@ -23,7 +23,7 @@ function parseRoll(dice){
 
     if (strInd !== diceArr.length){
         curNum = "";
-        curOp = diceArr[1];
+        curOp = diceArr[1][strInd];
         console.log("Current op: " + curOp);
 
         for(let x = (strInd); x < diceArr[1].length; x++){
@@ -72,9 +72,10 @@ function getSides(input){
         else{
             intStr = intStr + input[x];
         }
+        ind++;
     }
 
-    ind = ind + 1;
+    // ind = ind + 1;
     let result = [parseInt(intStr), ind];
     return result;
 }
@@ -134,7 +135,7 @@ function roll(numDice, numSides){
 
         total += r;
     }
-    
+
     return [total, rollStr];
 }
 
